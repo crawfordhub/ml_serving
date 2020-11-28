@@ -1,7 +1,7 @@
 from flask import request, jsonify
 import numpy as np
 
-from flask_app import app
+from app import app
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
