@@ -8,8 +8,7 @@ def run_request():
     list = ['red', 'green', 'blue', 'yellow', 'black']
     if index < 0 or index > len(list):
         response = np.random.randn()
-        response = flask.make_response(np.random.randn())
-        return response
+        return jsonify(response)
     return list[index]
 
 @app.route('/', methods=['GET', 'POST'])
