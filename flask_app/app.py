@@ -1,7 +1,15 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+def run_request():
+    index = int(request.json['index'])
+    list = ['red', 'green', 'blue', 'yellow', 'black']
+    return list[index]
+
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    return 'Hello, World!'
+    if request.method=='GET':
+        return 'The model is up and running. Send a POST request'
+    else:
+        return run_request()
