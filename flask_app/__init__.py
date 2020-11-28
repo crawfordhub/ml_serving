@@ -1,5 +1,5 @@
 from flask import Flask
-from . import routes
-import numpy as np
 
 app = Flask(__name__)
+
+from flask_app import routes
