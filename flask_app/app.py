@@ -7,7 +7,7 @@ def run_request():
     index = int(request.json['index'])
     list = ['red', 'green', 'blue', 'yellow', 'black']
     if index < 0 or index > len(list):
-        return np.random.randn()
+        return flask.make_response(np.random.randn().tobytes())
     return list[index]
 
 @app.route('/', methods=['GET', 'POST'])
