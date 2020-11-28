@@ -1,15 +1,14 @@
-from flask import request, jsonify
+from flask import request, jsonify, render_template
+from forms import IndexForm
 import numpy as np
 
 from app import app
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
-def hello_world():
-    if request.method=='GET':
-        return 'The model is up and running. Send a POST request'
-    else:
-        return run_request()
+def index():
+    form = IndexForm()
+    return render_template('index.html', form=form)
 
 def run_request():
     index = int(request.json['index'])

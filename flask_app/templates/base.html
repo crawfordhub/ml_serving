@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Serve ML </title>
+      {% else %}
+      <title>Serve ML</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Serve ML: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
